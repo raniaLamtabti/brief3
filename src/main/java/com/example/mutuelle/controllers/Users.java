@@ -217,6 +217,17 @@ public class Users implements Initializable {
 
         if (!error) {
             list.add(user);
+            this.address.setText("");
+            this.number.setText("");
+            this.name.setText("");
+            this.phone.setText("");
+            this.passport.setText("");
+            this.lastname.setText("");
+            this.firstname.setText("");
+            this.firstname.setText("");
+            this.email.setText("");
+            this.date.setValue(null);
+            this.country_list.setValue(null);
         }
         System.out.println(list);
     }
