@@ -1,24 +1,24 @@
 package com.example.mutuelle.controllers;
 
+import com.example.mutuelle.DAO.Clients;
+import com.example.mutuelle.DAO.ConnectionClass;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.PropertyPermission;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,97 +29,96 @@ public class Users implements Initializable {
     }
 
 
-    @FXML
-    private ChoiceBox<String> country_list = new ChoiceBox<String>();
+    @FXML private ChoiceBox<String> country_list = new ChoiceBox<String>();
 
-    @FXML
-    private TextField address;
+    @FXML private TextField address;
 
-    @FXML
-    private TextField phone;
+    @FXML private TextField phone;
 
-    @FXML
-    private TextField firstname;
+    @FXML private TextField firstname;
 
-    @FXML
-    private RadioButton passport;
+    @FXML private RadioButton passport;
 
-    @FXML
-    private RadioButton cin;
+    @FXML private RadioButton cin;
 
-    @FXML
-    private ToggleGroup identifient;
+    @FXML private ToggleGroup identifient;
 
-    @FXML
-    private DatePicker date;
+    @FXML private DatePicker date;
 
-    @FXML
-    private TextField name;
+    @FXML private TextField name;
 
-    @FXML
-    private TextField lastname;
+    @FXML private TextField lastname;
 
-    @FXML
-    private TextField number;
+    @FXML private TextField number;
 
-    @FXML
-    private TextField email;
+    @FXML private TextField email;
 
-    @FXML
-    private Label eName;
+    @FXML private TextField badge;
 
-    @FXML
-    private Label eFname;
+    @FXML private Label eName;
 
-    @FXML
-    private Label eLname;
+    @FXML private Label eFname;
 
-    @FXML
-    private Label eEmail;
+    @FXML private Label eLname;
 
-    @FXML
-    private Label eNumber;
+    @FXML private Label eEmail;
 
-    @FXML
-    private Label ePhone;
+    @FXML private Label eNumber;
 
-    @FXML
-    private Label eDate;
+    @FXML private Label ePhone;
 
-    @FXML
-    private Label eAddress;
+    @FXML private Label eDate;
 
-    @FXML
-    private TableView<User> table_users;
+    @FXML private Label eAddress;
 
-    @FXML
-    private TableColumn<User, String> c_address;
+    @FXML private Label eBadge;
 
-    @FXML
-    private TableColumn<User, LocalDate> c_date;
+    @FXML private TableView<Client> table_users;
 
-    @FXML
-    private TableColumn<User, String> c_email;
+    @FXML private TableColumn<Client, String> c_address;
 
-    @FXML
-    private TableColumn<User, String> c_fname;
+    @FXML private TableColumn<Client, Date> c_date;
 
-    @FXML
-    private TableColumn<User, String> c_lname;
+    @FXML private TableColumn<Client, String> c_email;
 
-    @FXML
-    private TableColumn<User, String> c_name;
+    @FXML private TableColumn<Client, String> c_fname;
 
-    @FXML
-    private TableColumn<User, String> c_number;
+    @FXML private TableColumn<Client, String> c_lname;
 
-    @FXML
-    private TableColumn<User, String> c_phone;
+    @FXML private TableColumn<Client, String> c_name;
 
-    ObservableList<User> list = FXCollections.observableArrayList();
+    @FXML private TableColumn<Client, String> c_cin;
+
+    @FXML private TableColumn<Client, String> c_phone;
+
+    @FXML private TableColumn<Client, String> c_passport;
+
+    @FXML private TableColumn<Client, String> c_badge;
+
+    private String addressDb;
+
+    private String phoneDb;
+
+    private String firstnameDb;
+
+    private LocalDate dateDb;
+
+    private String nameDb;
+
+    private String lastnameDb;
+
+    private String cinDb;
+
+    private String passportDb;
+
+    private String emailDb;
+
+    private String badgeDb;
+
+    ObservableList<Client> list = FXCollections.observableArrayList();
 
     public void create(){
-        User user = new User();
+        Client client = new Client();
 
         String regexPhone = "[0-9]+";
         String regexEmail = "^(.+)@(\\S+)$";
@@ -146,7 +145,7 @@ public class Users implements Initializable {
             error = true;
         }else{
             this.eName.setText("");
-            user.setName(this.name.getText());
+            client.setName(this.name.getText());
         }
 
         if (this.firstname.getLength() > 50 || this.firstname.getText().isEmpty()){
@@ -154,7 +153,7 @@ public class Users implements Initializable {
             error = true;
         }else{
             this.eFname.setText("");
-            user.setFirstname(this.firstname.getText());
+            client.setFirstname(this.firstname.getText());
         }
 
         if (this.lastname.getLength() > 50 || this.lastname.getText().isEmpty()){
@@ -162,7 +161,8 @@ public class Users implements Initializable {
             error = true;
         }else{
             this.eLname.setText("");
-            user.setLastname(this.lastname.getText());
+            System.out.println(this.lastname.getText());
+            client.setLastname(this.lastname.getText());
         }
 
         if (this.phone.getText().isEmpty() || this.phone.getLength() < 9 || !mp.matches()){
@@ -170,7 +170,7 @@ public class Users implements Initializable {
             error = true;
         }else{
             this.ePhone.setText("");
-            user.setPhone(this.country_list.getSelectionModel().getSelectedItem() +""+ this.phone.getText());
+            client.setPhone(this.country_list.getSelectionModel().getSelectedItem() +""+ this.phone.getText());
         }
 
         if (this.email.getText().isEmpty() || !me.matches()){
@@ -178,7 +178,7 @@ public class Users implements Initializable {
             error = true;
         }else{
             this.eEmail.setText("");
-            user.setEmail(this.email.getText());
+            client.setEmail(this.email.getText());
         }
 
         if (Objects.equals(toogleGroupValue, "CIN")){
@@ -186,7 +186,8 @@ public class Users implements Initializable {
                 this.eNumber.setText("*should containe two alphabit and 6 digit");
                 error = true;
             }else{
-                user.setNumber("CIN: "+this.number.getText());
+                client.setPassport("");
+                client.setCin(this.number.getText());
                 this.eNumber.setText("");
             }
         }else if(Objects.equals(toogleGroupValue, "Passport")){
@@ -194,7 +195,8 @@ public class Users implements Initializable {
                 this.eNumber.setText("*should containe two alphabit and 7 digit");
                 error = true;
             }else{
-                user.setNumber("Passport: "+this.number.getText());
+                client.setCin("");
+                client.setPassport(this.number.getText());
                 this.eNumber.setText("");
             }
         }
@@ -204,7 +206,7 @@ public class Users implements Initializable {
             error = true;
         }else{
             this.eAddress.setText("");
-            user.setAddress(this.address.getText());
+            client.setAddress(this.address.getText());
         }
 
         if (this.date.getValue() == null){
@@ -212,11 +214,26 @@ public class Users implements Initializable {
             error = true;
         }else{
             this.eDate.setText("");
-            user.setDate(this.date.getValue());
+            client.setHire_date(Date.valueOf(this.date.getValue().toString()));
         }
 
+
+
+        if (this.badge.getText() == null){
+            this.eBadge.setText("*should not be empty");
+            error = true;
+        }else{
+            this.eBadge.setText("");
+            client.setBadge(this.badge.getText());
+        }
+
+        ConnectionClass cn=new ConnectionClass();
+        cn.getConnection();
+
+        Clients newClient=new Clients();
+
         if (!error) {
-            list.add(user);
+            newClient.Store(client);
             this.address.setText("");
             this.number.setText("");
             this.name.setText("");
@@ -228,22 +245,26 @@ public class Users implements Initializable {
             this.email.setText("");
             this.date.setValue(null);
             this.country_list.setValue(null);
+            this.badge.setText("");
         }
-        System.out.println(list);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        c_name.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
-        c_number.setCellValueFactory(new PropertyValueFactory<User, String>("number"));
-        c_phone.setCellValueFactory(new PropertyValueFactory<User, String>("phone"));
-        c_lname.setCellValueFactory(new PropertyValueFactory<User, String>("lastname"));
-        c_fname.setCellValueFactory(new PropertyValueFactory<User, String>("firstname"));
-        c_address.setCellValueFactory(new PropertyValueFactory<User, String>("address"));
-        c_email.setCellValueFactory(new PropertyValueFactory<User, String>("email"));
-        c_date.setCellValueFactory(new PropertyValueFactory<User, LocalDate>("date"));
+        Clients clients = new Clients();
 
-        table_users.setItems(list);
+        c_badge.setCellValueFactory(new PropertyValueFactory<Client, String>("badge"));
+        c_name.setCellValueFactory(new PropertyValueFactory<Client, String>("name"));
+        c_cin.setCellValueFactory(new PropertyValueFactory<Client, String>("cin"));
+        c_passport.setCellValueFactory(new PropertyValueFactory<Client, String>("passport"));
+        c_phone.setCellValueFactory(new PropertyValueFactory<Client, String>("phone"));
+        c_lname.setCellValueFactory(new PropertyValueFactory<Client, String>("lastname"));
+        c_fname.setCellValueFactory(new PropertyValueFactory<Client, String>("firstname"));
+        c_address.setCellValueFactory(new PropertyValueFactory<Client, String>("address"));
+        c_email.setCellValueFactory(new PropertyValueFactory<Client, String>("email"));
+        c_date.setCellValueFactory(new PropertyValueFactory<Client, Date>("hire_date"));
+
+        table_users.setItems(clients.getClients());
 
 
         JSONParser jsonParser = new JSONParser();

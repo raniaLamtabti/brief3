@@ -20,17 +20,17 @@
 
 <AnchorPane prefHeight="471.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mutuelle.controllers.Users">
    <children>
-      <TabPane prefHeight="546.0" prefWidth="851.0" style="-fx-background-color: #FFF;" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="650.0" prefWidth="1056.0" style="-fx-background-color: #FFF;" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Create new account">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane layoutX="-2.0" layoutY="-2.0" prefHeight="520.0" prefWidth="860.0" style="-fx-background-color: #0436a5;">
+                        <Pane layoutX="-2.0" layoutY="-2.0" prefHeight="624.0" prefWidth="1062.0" style="-fx-background-color: #0436a5;">
                            <children>
-                              <Pane layoutX="75.0" layoutY="41.0" prefHeight="439.0" prefWidth="709.0" style="-fx-background-color: #FFF; -fx-background-radius: 20px;">
+                              <Pane layoutX="215.0" layoutY="73.0" prefHeight="439.0" prefWidth="709.0" style="-fx-background-color: #FFF; -fx-background-radius: 20px;">
                                  <children>
-                                    <TextField fx:id="address" accessibleRole="TEXT_AREA" layoutX="399.0" layoutY="288.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                    <TextField fx:id="address" accessibleRole="TEXT_AREA" layoutX="399.0" layoutY="264.0" prefHeight="105.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                                        <effect>
                                           <DropShadow spread="0.46">
                                              <color>
@@ -39,7 +39,7 @@
                                           </DropShadow>
                                        </effect>
                                     </TextField>
-                                    <TextField fx:id="phone" layoutX="461.0" layoutY="210.0" prefHeight="30.0" prefWidth="141.0" style="-fx-background-color: #fff;">
+                                    <TextField fx:id="phone" layoutX="461.0" layoutY="186.0" prefHeight="30.0" prefWidth="141.0" style="-fx-background-color: #fff;">
                                        <effect>
                                           <DropShadow spread="0.46">
                                              <color>
@@ -48,7 +48,7 @@
                                           </DropShadow>
                                        </effect>
                                     </TextField>
-                                    <TextField fx:id="firstname" layoutX="108.0" layoutY="139.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                    <TextField fx:id="firstname" layoutX="108.0" layoutY="115.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                                        <effect>
                                           <DropShadow spread="0.46">
                                              <color>
@@ -57,12 +57,12 @@
                                           </DropShadow>
                                        </effect>
                                     </TextField>
-                                    <Label layoutX="108.0" layoutY="44.0" text="Company name" textFill="#070e4fbe">
+                                    <Label layoutX="108.0" layoutY="20.0" text="Company name" textFill="#070e4fbe">
                                        <font>
                                           <Font name="Roboto" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="lastname" layoutX="399.0" layoutY="139.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                    <TextField fx:id="lastname" layoutX="399.0" layoutY="115.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                                        <effect>
                                           <DropShadow spread="0.46">
                                              <color>
@@ -71,17 +71,17 @@
                                           </DropShadow>
                                        </effect>
                                     </TextField>
-                                    <Label layoutX="108.0" layoutY="120.0" text="First name" textFill="#070e4fbe">
+                                    <Label layoutX="108.0" layoutY="96.0" text="First name" textFill="#070e4fbe">
                                        <font>
                                           <Font name="Roboto" size="14.0" />
                                        </font>
                                     </Label>
-                                    <RadioButton fx:id="passport" layoutX="108.0" layoutY="270.0" mnemonicParsing="false" selected="true" style="-fx-background-color: #fff;" text="Passport" textFill="#070e4f">
+                                    <RadioButton fx:id="passport" layoutX="108.0" layoutY="248.0" mnemonicParsing="false" selected="true" style="-fx-background-color: #fff;" text="Passport" textFill="#070e4f">
                                        <toggleGroup>
                                           <ToggleGroup fx:id="identifient" />
                                        </toggleGroup></RadioButton>
-                                    <RadioButton fx:id="cin" layoutX="206.0" layoutY="270.0" mnemonicParsing="false" style="-fx-background-color: #fff;" text="CIN" textFill="#070e4f" toggleGroup="$identifient" />
-                                    <DatePicker fx:id="date" layoutX="400.0" layoutY="64.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #FFF; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-width: 0px;">
+                                    <RadioButton fx:id="cin" layoutX="206.0" layoutY="248.0" mnemonicParsing="false" style="-fx-background-color: #fff;" text="CIN" textFill="#070e4f" toggleGroup="$identifient" />
+                                    <DatePicker fx:id="date" layoutX="400.0" layoutY="40.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #FFF; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-width: 0px;">
                                        <effect>
                                           <DropShadow spread="0.46">
                                              <color>
@@ -93,12 +93,12 @@
                                           <Insets />
                                        </opaqueInsets>
                                     </DatePicker>
-                                    <Label layoutX="400.0" layoutY="46.0" text="Work start date" textFill="#070e4fbe">
+                                    <Label layoutX="400.0" layoutY="22.0" text="Work start date" textFill="#070e4fbe">
                                        <font>
                                           <Font name="Roboto" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="name" layoutX="108.0" layoutY="64.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                    <TextField fx:id="name" layoutX="108.0" layoutY="40.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                                        <effect>
                                           <DropShadow spread="0.46">
                                              <color>
@@ -107,12 +107,12 @@
                                           </DropShadow>
                                        </effect>
                                     </TextField>
-                                    <Label layoutX="398.0" layoutY="121.0" text="Last name" textFill="#070e4fbe">
+                                    <Label layoutX="398.0" layoutY="97.0" text="Last name" textFill="#070e4fbe">
                                        <font>
                                           <Font name="Roboto" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="number" layoutX="108.0" layoutY="291.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                    <TextField fx:id="number" layoutX="108.0" layoutY="278.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                                        <effect>
                                           <DropShadow spread="0.46">
                                              <color>
@@ -121,17 +121,17 @@
                                           </DropShadow>
                                        </effect>
                                     </TextField>
-                                    <Label layoutX="398.0" layoutY="191.0" text="Telephone" textFill="#070e4fbe">
+                                    <Label layoutX="398.0" layoutY="167.0" text="Telephone" textFill="#070e4fbe">
                                        <font>
                                           <Font name="Roboto" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="108.0" layoutY="193.0" text="Email " textFill="#070e4fbe">
+                                    <Label layoutX="108.0" layoutY="169.0" text="Email " textFill="#070e4fbe">
                                        <font>
                                           <Font name="Roboto" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="email" layoutX="109.0" layoutY="211.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                    <TextField fx:id="email" layoutX="109.0" layoutY="187.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                                        <effect>
                                           <DropShadow spread="0.46">
                                              <color>
@@ -140,56 +140,75 @@
                                           </DropShadow>
                                        </effect>
                                     </TextField>
-                                    <Label layoutX="398.0" layoutY="268.0" text="Address" textFill="#070e4fbf">
+                                    <Label layoutX="398.0" layoutY="244.0" text="Address" textFill="#070e4fbf">
                                        <font>
                                           <Font name="Roboto" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="create" layoutX="110.0" layoutY="370.0" mnemonicParsing="false" onAction="#create" prefHeight="25.0" prefWidth="490.0" style="-fx-background-color: #0436a5; -fx-background-radius: 10px;" text="Create" textFill="WHITE">
+                                    <Button fx:id="create" layoutX="110.0" layoutY="390.0" mnemonicParsing="false" onAction="#create" prefHeight="30.0" prefWidth="490.0" style="-fx-background-color: #0436a5; -fx-background-radius: 10px;" text="Create" textFill="WHITE">
                                        <font>
                                           <Font name="Roboto Bold" size="12.0" />
                                        </font></Button>
-                                    <Label fx:id="eName" layoutX="108.0" layoutY="95.0" prefHeight="17.0" prefWidth="197.0" textFill="#cf1b4d">
+                                    <Label fx:id="eName" layoutX="108.0" layoutY="71.0" prefHeight="17.0" prefWidth="197.0" textFill="#cf1b4d">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="eFname" layoutX="107.0" layoutY="169.0" prefHeight="17.0" prefWidth="201.0" textFill="#cf1b4d">
+                                    <Label fx:id="eFname" layoutX="107.0" layoutY="145.0" prefHeight="17.0" prefWidth="201.0" textFill="#cf1b4d">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="eLname" layoutX="399.0" layoutY="169.0" prefHeight="17.0" prefWidth="201.0" textFill="#cf1b4d">
+                                    <Label fx:id="eLname" layoutX="399.0" layoutY="145.0" prefHeight="17.0" prefWidth="201.0" textFill="#cf1b4d">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="eEmail" layoutX="109.0" layoutY="241.0" prefHeight="17.0" prefWidth="201.0" textFill="#cf1b4d">
+                                    <Label fx:id="eEmail" layoutX="109.0" layoutY="217.0" prefHeight="17.0" prefWidth="201.0" textFill="#cf1b4d">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="eNumber" layoutX="107.0" layoutY="321.0" prefHeight="17.0" prefWidth="199.0" textFill="#cf1b4d">
+                                    <Label fx:id="eNumber" layoutX="107.0" layoutY="297.0" prefHeight="17.0" prefWidth="199.0" textFill="#cf1b4d">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="ePhone" layoutX="400.0" layoutY="240.0" prefHeight="17.0" prefWidth="205.0" textFill="#cf1b4d">
+                                    <Label fx:id="ePhone" layoutX="400.0" layoutY="216.0" prefHeight="17.0" prefWidth="205.0" textFill="#cf1b4d">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="eAddress" layoutX="400.0" layoutY="316.0" prefHeight="17.0" prefWidth="200.0" textFill="#cf1b4d">
+                                    <Label fx:id="eAddress" layoutX="400.0" layoutY="369.0" prefHeight="17.0" prefWidth="200.0" textFill="#cf1b4d">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="eDate" layoutX="399.0" layoutY="92.0" prefHeight="17.0" prefWidth="200.0" textFill="#cf1b4d">
+                                    <Label fx:id="eDate" layoutX="399.0" layoutY="68.0" prefHeight="17.0" prefWidth="200.0" textFill="#cf1b4d">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Label>
-                                    <ChoiceBox fx:id="country_list" layoutX="400.0" layoutY="210.0" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: #afc7fe; -fx-border-width: 0px;" />
+                                    <ChoiceBox fx:id="country_list" layoutX="400.0" layoutY="186.0" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: #afc7fe; -fx-border-width: 0px;" />
+                                    <Label layoutX="107.0" layoutY="319.0" text="Badge" textFill="#070e4fbe">
+                                       <font>
+                                          <Font name="Roboto" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="badge" layoutX="108.0" layoutY="337.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                       <effect>
+                                          <DropShadow spread="0.46">
+                                             <color>
+                                                <Color red="0.019607843831181526" green="0.21568627655506134" blue="0.6392157077789307" opacity="0.18000000715255737" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </TextField>
+                                    <Label fx:id="eBadge" layoutX="106.0" layoutY="369.0" prefHeight="17.0" prefWidth="199.0" textFill="#cf1b4d">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </Pane>
                            </children>
@@ -203,20 +222,29 @@
                      <children>
                         <Pane prefHeight="491.0" prefWidth="774.0">
                            <children>
-                              <Pane prefHeight="516.0" prefWidth="851.0" style="-fx-background-color: #0436a5;">
+                              <Pane prefHeight="621.0" prefWidth="1056.0" style="-fx-background-color: #0436a5;">
                                  <children>
-                                    <TableView fx:id="table_users" layoutX="24.0" layoutY="31.0" prefHeight="455.0" prefWidth="804.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;">
+                                    <TableView fx:id="table_users" layoutX="24.0" layoutY="130.0" prefHeight="472.0" prefWidth="1010.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;">
                                       <columns>
-                                        <TableColumn fx:id="c_name" prefWidth="97.20000648498535" text="Copany name" />
-                                          <TableColumn fx:id="c_date" prefWidth="94.20001220703125" text="Work start date" />
-                                          <TableColumn fx:id="c_fname" minWidth="5.199981689453125" prefWidth="81.0" text="First name" />
-                                          <TableColumn fx:id="c_lname" prefWidth="66.4000244140625" text="Last name" />
-                                          <TableColumn fx:id="c_email" prefWidth="101.5999755859375" text="Email" />
-                                          <TableColumn fx:id="c_phone" prefWidth="101.60006713867188" text="Phone" />
-                                          <TableColumn fx:id="c_number" prefWidth="118.39996337890625" text="CIN or Passport " />
+                                          <TableColumn fx:id="c_badge" prefWidth="94.4000244140625" text="Badge" />
+                                        <TableColumn fx:id="c_name" prefWidth="111.20001220703125" text="Copany name" />
+                                          <TableColumn fx:id="c_date" prefWidth="100.80001831054688" text="Work start date" />
+                                          <TableColumn fx:id="c_fname" minWidth="5.199981689453125" prefWidth="60.79998779296875" text="First name" />
+                                          <TableColumn fx:id="c_lname" prefWidth="92.0" text="Last name" />
+                                          <TableColumn fx:id="c_email" prefWidth="105.60000610351562" text="Email" />
+                                          <TableColumn fx:id="c_phone" prefWidth="153.5999755859375" text="Phone" />
+                                          <TableColumn fx:id="c_cin" prefWidth="87.2000732421875" text="CIN" />
+                                          <TableColumn fx:id="c_passport" prefWidth="71.2000732421875" text="Passport " />
                                         <TableColumn fx:id="c_address" prefWidth="135.5999755859375" text="Address" />
                                       </columns>
                                     </TableView>
+                                    <Label layoutX="24.0" layoutY="36.0" text="Company name" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="s_company" layoutX="24.0" layoutY="75.0" />
+                                    <Button fx:id="search" layoutX="225.0" layoutY="75.0" mnemonicParsing="false" text="Search" />
                                  </children></Pane>
                            </children></Pane>
                      </children></AnchorPane>

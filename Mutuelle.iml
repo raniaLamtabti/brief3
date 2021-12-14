@@ -10,6 +10,27 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27/src/build/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27/src/demo/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27/src/generated/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27/src/legacy/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27/src/main/core-api/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27/src/main/core-impl/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27/src/main/protocol-impl/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27/src/main/user-api/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27/src/main/user-impl/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27/src/test/java" />
+        </SOURCES>
+        <jarDirectory url="file://$USER_HOME$/Downloads/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27" recursive="false" />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.10" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
@@ -27,5 +48,8 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty:6.1.25" level="project" />
+    <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty-util:6.1.25" level="project" />
+    <orderEntry type="library" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" level="project" />
   </component>
 </module>

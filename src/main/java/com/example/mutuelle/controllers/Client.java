@@ -6,33 +6,38 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.sql.Date;
 
-public class User {
+
+public class Client {
     private String address;
     private String phone;
     private String firstname;
-    private LocalDate date;
+    private Date hire_date;
     private String name;
     private String lastname;
-    private String number;
+    private String cin;
+    private String passport;
     private String email;
-    private String country_list;
+    private String badge;
 
-    public User() {
+    public Client() {
     }
 
-    public User(String address, String phone, String firstname, LocalDate date, String name, String lastname, String number, String email) {
+    public Client(String address, String phone, String firstname, Date hire_date, String name, String lastname, String cin, String passport, String badge, String email) {
         this.address = address;
         this.phone = phone;
         this.firstname = firstname;
-        this.date = date;
+        this.hire_date = hire_date;
         this.name = name;
         this.lastname = lastname;
-        this.number = number;
+        this.cin = cin;
+        this.passport = passport;
+        this.badge = badge;
         this.email = email;
     }
+
+
 
 
     public String getAddress() {
@@ -59,12 +64,12 @@ public class User {
         this.firstname = firstname;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Date getHire_date() {
+        return hire_date;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setHire_date(Date hire_date) {
+        this.hire_date = hire_date;
     }
 
     public String getName() {
@@ -83,12 +88,28 @@ public class User {
         this.lastname = lastname;
     }
 
-    public String getNumber() {
-        return number;
+    public String getCin() {
+        return cin;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setCin(String cin) {
+        this.cin = cin;
+    }
+
+    public String getPassport() {
+        return passport;
+    }
+
+    public void setPassport(String passport) {
+        this.passport = passport;
+    }
+
+    public String getBadge() {
+        return badge;
+    }
+
+    public void setBadge(String badge) {
+        this.badge = badge;
     }
 
     public String getEmail() {
@@ -105,10 +126,10 @@ public class User {
                 "address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
                 ", firstname='" + firstname + '\'' +
-                ", date=" + date +
+                ", hire_date=" + hire_date +
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", number='" + number + '\'' +
+                ", cin='" + cin + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
