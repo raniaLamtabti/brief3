@@ -2,6 +2,7 @@ package com.example.mutuelle.controllers;
 
 import com.example.mutuelle.DAO.Clients;
 import com.example.mutuelle.DAO.ConnectionClass;
+import com.example.mutuelle.HelloApplication;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -95,27 +96,9 @@ public class Users implements Initializable {
 
     @FXML private TableColumn<Client, String> c_badge;
 
-    private String addressDb;
+    @FXML private ComboBox<String> companies_list;
 
-    private String phoneDb;
-
-    private String firstnameDb;
-
-    private LocalDate dateDb;
-
-    private String nameDb;
-
-    private String lastnameDb;
-
-    private String cinDb;
-
-    private String passportDb;
-
-    private String emailDb;
-
-    private String badgeDb;
-
-    ObservableList<Client> list = FXCollections.observableArrayList();
+    @FXML private TextField s_value;
 
     public void create(){
         Client client = new Client();
@@ -217,8 +200,6 @@ public class Users implements Initializable {
             client.setHire_date(Date.valueOf(this.date.getValue().toString()));
         }
 
-
-
         if (this.badge.getText() == null){
             this.eBadge.setText("*should not be empty");
             error = true;
@@ -266,6 +247,10 @@ public class Users implements Initializable {
 
         table_users.setItems(clients.getClients());
 
+        ObservableList<String> companies = FXCollections.observableArrayList();
+        companies = clients.getCompanies();
+
+        this.companies_list.setItems(companies);
 
         JSONParser jsonParser = new JSONParser();
         try (FileReader reader = new FileReader("C:\\Users\\adm\\IdeaProjects\\Mutuelle\\src\\main\\resources\\com\\example\\mutuelle\\code.json"))
@@ -286,5 +271,25 @@ public class Users implements Initializable {
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    public void search(){
+        String searchValue = this.s_value.getText();
+        Clients clients = new Clients();
+        table_users.getItems().clear();
+        table_users.setItems(clients.filter(searchValue));
+    }
+
+
+    public void findByCompany(){
+        String companyName = this.companies_list.getSelectionModel().getSelectedItem();
+        Clients clients = new Clients();
+        table_users.getItems().clear();
+        table_users.setItems(clients.filterByCompany(companyName));
+    }
+
+    public void goToChart() throws IOException {
+        HelloApplication m = new HelloApplication();
+        m.changeScene("Chart-view.fxml");
     }
 }

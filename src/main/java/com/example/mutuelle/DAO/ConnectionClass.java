@@ -5,7 +5,7 @@ public class ConnectionClass {
     static java.sql.Connection connection = null;
     static String url = "jdbc:mysql://localhost:3306/";
     static String dbName = "mutuelle";
-    static String driver = "com.mysql.jdbc.Driver";
+    static String driver = "com.mysql.cj.jdbc.Driver";
     static String userName = "root";
     static String password = "1234";
 

@@ -96,9 +96,7 @@ public class Client {
         this.cin = cin;
     }
 
-    public String getPassport() {
-        return passport;
-    }
+    public String getPassport() { return passport; }
 
     public void setPassport(String passport) {
         this.passport = passport;
