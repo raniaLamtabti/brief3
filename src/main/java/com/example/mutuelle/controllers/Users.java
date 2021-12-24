@@ -1,5 +1,7 @@
 package com.example.mutuelle.controllers;
-
+import javax.mail.internet.*;
+import java.util.Properties;
+import javax.mail.*;
 import com.example.mutuelle.DAO.Clients;
 import com.example.mutuelle.DAO.ConnectionClass;
 import com.example.mutuelle.HelloApplication;
@@ -144,7 +146,6 @@ public class Users implements Initializable {
             error = true;
         }else{
             this.eLname.setText("");
-            System.out.println(this.lastname.getText());
             client.setLastname(this.lastname.getText());
         }
 
@@ -227,6 +228,14 @@ public class Users implements Initializable {
             this.date.setValue(null);
             this.country_list.setValue(null);
             this.badge.setText("");
+
+            Mail.send(
+                            "raniatest429@gmail.com",
+                            "test@555",
+                            "rania.lamtabti@gmail.com",
+                            "Bienvenu sur WayToLearnX",
+                            "mail de test!"
+                    );
         }
     }
 
@@ -292,4 +301,7 @@ public class Users implements Initializable {
         HelloApplication m = new HelloApplication();
         m.changeScene("Chart-view.fxml");
     }
+
+
+
 }
